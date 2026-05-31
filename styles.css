@@ -302,3 +302,15 @@ footer p{color:#baa27e;margin:4px 0 0}
   .spec-grid{grid-template-columns:1fr}
   .modal-panel ol{columns:1}
 }
+/* 日本の住宅は、短すぎる。 */
+.copy h2{
+  font-size:clamp(28px,3vw,48px);
+  line-height:1.4;
+}
+
+@media(max-width:560px){
+  .copy h2{
+    font-size:26px;
+    line-height:1.5;
+  }
+}
