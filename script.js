@@ -29,3 +29,14 @@ menu?.addEventListener("click",()=>{
     nav.removeAttribute("style");
   }
 });
+const leadForm = document.getElementById("leadForm");
+const thanksMessage = document.getElementById("thanksMessage");
+
+if (leadForm && thanksMessage) {
+  leadForm.addEventListener("submit", function () {
+    setTimeout(function () {
+      leadForm.style.display = "none";
+      thanksMessage.style.display = "block";
+    }, 700);
+  });
+}
