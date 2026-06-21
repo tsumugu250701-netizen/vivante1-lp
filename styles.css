@@ -503,3 +503,37 @@ grid-template-columns:1fr;
   background-size:cover;
   background-position:center;
 }
+.request-left{
+  background:
+    linear-gradient(rgba(15,10,8,.72),rgba(15,10,8,.72)),
+    url("assets/contact.jpg") center/cover;
+  color:#fff;
+  padding:90px 80px;
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+}
+
+.request-left h2{
+  font-size:56px;
+  line-height:1.35;
+  font-weight:400;
+}
+
+.request-left p{
+  font-size:16px;
+  line-height:2;
+}
+
+.request-right{
+  background:#fff;
+  padding:80px 80px;
+  display:flex;
+  align-items:center;
+}
+
+.request-right li{
+  font-size:20px;
+  line-height:1.8;
+  margin-bottom:18px;
+}
