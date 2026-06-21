@@ -496,3 +496,10 @@ font-size:34px;
 grid-template-columns:1fr;
 }
 }
+.request-left{
+  background:
+  linear-gradient(rgba(15,10,8,.75),rgba(15,10,8,.75)),
+  url("assets/contact.jpg");
+  background-size:cover;
+  background-position:center;
+}
