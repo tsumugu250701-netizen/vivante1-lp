@@ -596,3 +596,48 @@ grid-template-columns:1fr;
   display:block !important;
   box-shadow:0 30px 80px rgba(40,25,15,.18) !important;
 }
+/* スマホ崩れ修正 */
+@media (max-width: 768px){
+
+  body{
+    overflow-x:hidden;
+  }
+
+  .dark-band{
+    display:block !important;
+    width:100% !important;
+    padding:60px 24px !important;
+    box-sizing:border-box !important;
+    overflow:hidden !important;
+  }
+
+  .dark-copy{
+    width:100% !important;
+    max-width:100% !important;
+  }
+
+  .dark-copy h2{
+    font-size:34px !important;
+    line-height:1.45 !important;
+    word-break:keep-all !important;
+    overflow-wrap:normal !important;
+  }
+
+  .dark-copy p{
+    font-size:15px !important;
+    line-height:2 !important;
+  }
+
+  .story-images{
+    display:grid !important;
+    grid-template-columns:1fr !important;
+    gap:16px !important;
+    margin-top:32px !important;
+  }
+
+  .story-images img{
+    width:100% !important;
+    height:auto !important;
+    display:block !important;
+  }
+}
