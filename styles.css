@@ -681,3 +681,11 @@ grid-template-columns:1fr;
     font-size:15px;
   }
 }
+#hidden_iframe,
+iframe[name="hidden_iframe"]{
+  display:none !important;
+  width:0 !important;
+  height:0 !important;
+  border:0 !important;
+  visibility:hidden !important;
+}
