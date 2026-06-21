@@ -552,3 +552,26 @@ grid-template-columns:1fr;
   height:auto;
   display:block;
 }
+.request-intro{
+  background:#f6f2eb;
+  padding:80px 6vw;
+}
+
+.request-image-full{
+  width:min(1400px, 100%);
+  margin:0 auto;
+}
+
+.request-image-full img{
+  width:100%;
+  height:auto;
+  display:block;
+  box-shadow:0 24px 60px rgba(40,25,15,.15);
+}
+.request-intro{
+  padding:60px 3vw;
+}
+
+.request-image-full{
+  width:min(1600px, 100%);
+}
