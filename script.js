@@ -1,22 +1,62 @@
+// =====================
+// Form Step
+// =====================
 const steps = [...document.querySelectorAll(".form-step")];
 const stepLabels = [...document.querySelectorAll(".steps span")];
 let current = 0;
+
 function showStep(i){
-  current = Math.max(0, Math.min(i, steps.length-1));
-  steps.forEach((s,idx)=>s.classList.toggle("active", idx===current));
-  stepLabels.forEach((s,idx)=>s.classList.toggle("active", idx===current));
+  current = Math.max(0, Math.min(i, steps.length - 1));
+
+  steps.forEach((step, index) => {
+    step.classList.toggle("active", index === current);
+  });
+
+  stepLabels.forEach((label, index) => {
+    label.classList.toggle("active", index === current);
+  });
 }
-document.querySelectorAll(".form-next").forEach(btn=>btn.addEventListener("click",()=>showStep(current+1)));
-document.querySelectorAll(".form-prev").forEach(btn=>btn.addEventListener("click",()=>showStep(current-1)));
 
+document.querySelectorAll(".form-next").forEach((btn) => {
+  btn.addEventListener("click", () => showStep(current + 1));
+});
+
+document.querySelectorAll(".form-prev").forEach((btn) => {
+  btn.addEventListener("click", () => showStep(current - 1));
+});
+
+
+// =====================
+// Spec Modal
+// =====================
 const modal = document.getElementById("specModal");
-document.getElementById("openSpec")?.addEventListener("click",()=>modal.classList.add("active"));
-document.getElementById("closeSpec")?.addEventListener("click",()=>modal.classList.remove("active"));
-modal?.addEventListener("click",(e)=>{ if(e.target===modal) modal.classList.remove("active") });
+const openSpec = document.getElementById("openSpec");
+const closeSpec = document.getElementById("closeSpec");
 
+openSpec?.addEventListener("click", () => {
+  modal?.classList.add("active");
+});
+
+closeSpec?.addEventListener("click", () => {
+  modal?.classList.remove("active");
+});
+
+modal?.addEventListener("click", (e) => {
+  if(e.target === modal){
+    modal.classList.remove("active");
+  }
+});
+
+
+// =====================
+// Mobile Menu
+// =====================
 const menu = document.querySelector(".menu");
 const nav = document.querySelector(".nav");
-menu?.addEventListener("click",()=>{
+
+menu?.addEventListener("click", () => {
+  if(!nav) return;
+
   if(getComputedStyle(nav).display === "none"){
     nav.style.display = "flex";
     nav.style.position = "fixed";
@@ -25,18 +65,32 @@ menu?.addEventListener("click",()=>{
     nav.style.background = "rgba(8,6,4,.96)";
     nav.style.padding = "28px";
     nav.style.alignItems = "flex-start";
+    nav.style.zIndex = "9999";
   }else{
     nav.removeAttribute("style");
   }
 });
+
+
+// =====================
+// Google Form Submit
+// =====================
 const leadForm = document.getElementById("leadForm");
 const thanksMessage = document.getElementById("thanksMessage");
 
 if (leadForm && thanksMessage) {
   leadForm.addEventListener("submit", function () {
+
+    // Googleフォーム完了画面へ遷移させないため、hidden iframeへ送信
+    leadForm.setAttribute("target", "hidden_iframe");
+
     setTimeout(function () {
       leadForm.style.display = "none";
       thanksMessage.style.display = "block";
-    }, 700);
+      thanksMessage.scrollIntoView({
+        behavior: "smooth",
+        block: "center"
+      });
+    }, 900);
   });
 }
