@@ -763,3 +763,51 @@ iframe[name="hidden_iframe"]{
 }
 
 }
+/* =========================
+   PHILOSOPHY画像レイアウト修正
+========================= */
+
+/* PC：左を大画像、右を上下2枚 */
+.image-grid.concept{
+  display:grid !important;
+  grid-template-columns:1.1fr .8fr !important;
+  grid-template-rows:260px 260px !important;
+  gap:12px !important;
+}
+
+.image-grid.concept img{
+  width:100% !important;
+  height:100% !important;
+  object-fit:cover !important;
+  display:block !important;
+}
+
+.image-grid.concept img:first-child{
+  grid-row:1 / span 2 !important;
+}
+
+/* タブレット・スマホ：3枚とも同じサイズで縦並び */
+@media(max-width:1000px){
+
+  .image-grid.concept{
+    grid-template-columns:1fr !important;
+    grid-template-rows:none !important;
+    gap:12px !important;
+  }
+
+  .image-grid.concept img,
+  .image-grid.concept img:first-child{
+    grid-row:auto !important;
+    width:100% !important;
+    height:240px !important;
+    object-fit:cover !important;
+  }
+}
+
+@media(max-width:560px){
+
+  .image-grid.concept img,
+  .image-grid.concept img:first-child{
+    height:210px !important;
+  }
+}
