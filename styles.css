@@ -701,3 +701,65 @@ iframe[name="hidden_iframe"]{
   object-fit:cover !important;
   display:block !important;
 }
+/* =========================
+画像サイズ完全統一
+========================= */
+
+/* VALUE */
+.value-cards article img{
+    width:100% !important;
+    height:260px !important;
+    object-fit:cover !important;
+}
+
+/* 暮らし */
+.gallery-row img{
+    width:100% !important;
+    height:220px !important;
+    object-fit:cover !important;
+}
+
+/* STORY */
+.story-images img{
+    width:100% !important;
+    height:260px !important;
+    object-fit:cover !important;
+}
+
+/* CONCEPT */
+.image-grid.concept img{
+    width:100% !important;
+    height:260px !important;
+    object-fit:cover !important;
+}
+
+/* 標準仕様 */
+.spec-grid article img{
+    width:100% !important;
+    height:170px !important;
+    object-fit:cover !important;
+}
+
+@media(max-width:768px){
+
+.gallery-row img{
+    height:180px !important;
+}
+
+.story-images img{
+    height:220px !important;
+}
+
+.image-grid.concept img{
+    height:220px !important;
+}
+
+.value-cards article img{
+    height:220px !important;
+}
+
+.spec-grid article img{
+    height:180px !important;
+}
+
+}
