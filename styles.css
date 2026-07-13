@@ -689,3 +689,15 @@ iframe[name="hidden_iframe"]{
   border:0 !important;
   visibility:hidden !important;
 }
+/* 画像サイズを全端末で統一 */
+.value-card{
+  overflow:hidden;
+  border-radius:8px;
+}
+
+.value-card img{
+  width:100% !important;
+  height:260px !important;
+  object-fit:cover !important;
+  display:block !important;
+}
