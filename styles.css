@@ -1008,3 +1008,16 @@ grid-template-columns:1fr;
   }
   .story-title span { display: block; white-space: nowrap; }
 }
+
+/* Prevent the second movie title from breaking the final character onto a new line. */
+@media (max-width: 768px) {
+  .movie-card:nth-child(2) .movie-text { padding: 24px 14px !important; }
+  .movie-card:nth-child(2) .movie-text h3 {
+    font-size: clamp(17px, 4.15vw, 23px) !important;
+    letter-spacing: -0.045em !important;
+    white-space: nowrap !important;
+    word-break: keep-all !important;
+    overflow-wrap: normal !important;
+    line-height: 1.5 !important;
+  }
+}
