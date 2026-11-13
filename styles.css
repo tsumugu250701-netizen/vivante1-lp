@@ -995,3 +995,16 @@ grid-template-columns:1fr;
   .request-image-full { margin: 0 auto !important; padding: 0 !important; }
   .request-image-full img { height: auto !important; display: block !important; }
 }
+
+/* STORY heading: enforce exactly two lines on mobile, independent of old br rules. */
+.story-title span { display: block; }
+@media (max-width: 768px) {
+  .dark-copy .story-title {
+    font-size: clamp(21px, 5.7vw, 28px) !important;
+    line-height: 1.55 !important;
+    letter-spacing: 0 !important;
+    overflow-wrap: normal !important;
+    word-break: keep-all !important;
+  }
+  .story-title span { display: block; white-space: nowrap; }
+}
