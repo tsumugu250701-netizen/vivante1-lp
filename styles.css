@@ -983,3 +983,15 @@ grid-template-columns:1fr;
     box-shadow: none !important;
   }
 }
+
+/* Concept-book section: eliminate excessive vertical whitespace on desktop too. */
+@media (min-width: 769px) {
+  .request-intro {
+    min-height: 0 !important;
+    height: auto !important;
+    padding: 24px 0 !important;
+    margin: 0 !important;
+  }
+  .request-image-full { margin: 0 auto !important; padding: 0 !important; }
+  .request-image-full img { height: auto !important; display: block !important; }
+}
