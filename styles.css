@@ -956,3 +956,30 @@ grid-template-columns:1fr;
     max-width: 100%;
   }
 }
+
+/* Mobile typography and concept-book spacing refinements */
+@media (max-width: 768px) {
+  /* Preserve the intended two-line STORY headline. */
+  .dark-copy h2 .pc-only { display: inline; }
+  .dark-copy h2 { font-size: clamp(27px, 7.1vw, 36px); line-height: 1.45; }
+  /* Fit the MOVIE 01 heading on one line. */
+  .movie-card:first-child .movie-text h3 {
+    font-size: clamp(17px, 4.25vw, 23px);
+    letter-spacing: -0.035em;
+    white-space: nowrap;
+  }
+  .movie-card:first-child .movie-text { padding: 24px 18px; }
+  /* Remove forced height and oversized margins around the concept book. */
+  .request-intro {
+    min-height: 0 !important;
+    height: auto !important;
+    padding: 12px 0 !important;
+    margin: 0 !important;
+  }
+  .request-image-full { margin: 0 !important; padding: 0 !important; }
+  .request-image-full img {
+    width: 100% !important;
+    height: auto !important;
+    box-shadow: none !important;
+  }
+}
