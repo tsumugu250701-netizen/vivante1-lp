@@ -933,30 +933,26 @@ grid-template-columns:1fr;
 
 }
 
-/* Mobile hero: show the entire landscape house image without cropping. */
+/* Mobile hero: keep the cinematic overlay and shift the house to the right. */
 @media (max-width: 560px) {
   .hero {
-    height: auto;
-    min-height: 100svh;
-    padding-bottom: 76px;
+    height: 100svh;
+    min-height: 700px;
+    padding-bottom: 0;
     background: #100d0b;
   }
   .hero-bg {
-    background-size: 100% auto;
-    background-position: center 64px;
+    background-size: auto 100%;
+    background-position: 35% center;
     background-repeat: no-repeat;
-    background-color: #100d0b;
   }
   .hero-shade {
-    background: linear-gradient(180deg,
-      rgba(0,0,0,.32) 0%,
-      rgba(0,0,0,.08) 64px,
-      rgba(0,0,0,.04) 34%,
-      rgba(16,13,11,.96) 52%,
-      #100d0b 72%);
+    background:
+      linear-gradient(90deg, rgba(0,0,0,.82) 0%, rgba(0,0,0,.62) 45%, rgba(0,0,0,.25) 100%),
+      linear-gradient(0deg, rgba(0,0,0,.5), transparent 55%);
   }
   .hero-content {
-    padding: calc(64px + 75vw + 24px) 22px 0;
+    padding: 102px 22px 0;
     max-width: 100%;
   }
 }
